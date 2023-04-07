@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "Directortree"
+version = "0.0.1"
+authors = [
+  { name="Thomas Glezen", email="tcglezen@gmail.com" } ,
+]
+description = "Utility library for displaying directory trees for python."
+dependencies = [
+]
+readme = "README.md"
+requires-python = ">=3.4"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/tcglezen/Directortree"
+"Bug Tracker" = "https://github.com/tcglezen/Directortree/issues"
