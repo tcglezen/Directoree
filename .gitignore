@@ -3,3 +3,4 @@
 *.whl
 *.gz
 *.idea
+docs/build/*
