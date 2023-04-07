@@ -5,7 +5,7 @@ import os
 from typing import List
 
 
-class Directortree:
+class DirectoryNode:
     """Represents node within the tree. Represents a directory
     """
 
@@ -41,7 +41,7 @@ class Directortree:
         self.max_depth = max_depth
 
         # Init files and folders
-        self.folders: List[Directortree] = []
+        self.folders: List[DirectoryNode] = []
         self.files: List[FileLeaf] = []
 
         # Populating Tree and creating subtree/files
@@ -51,13 +51,13 @@ class Directortree:
             content_path = os.path.join(self.dir_path, content)
 
             if os.path.isdir(content_path):  # Dir
-                new_directortree = Directortree(content_path,
-                                                path_width,
-                                                file_spacing,
-                                                dir_signal,
-                                                prefix+self.folder_prefix(),
-                                                self.suffix,
-                                                max_depth)
+                new_directortree = DirectoryNode(content_path,
+                                                 path_width,
+                                                 file_spacing,
+                                                 dir_signal,
+                                                 prefix + self.folder_prefix(),
+                                                 self.suffix,
+                                                 max_depth)
                 self.folders.append(new_directortree)
             else:  # File
                 new_fileleaf = FileLeaf(content,
@@ -101,7 +101,7 @@ class Directortree:
         return str(self) < str(other)
 
 
-class Directoroot(Directortree):
+class Directoroot(DirectoryNode):
     """Root of tree
     """
 
